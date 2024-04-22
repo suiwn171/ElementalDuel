@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <title>63070110</title>
+</head>
+<body>
+  <style>
+    #uimage{
+      width: 50px;
+      border-radius: 50%;
+    }
+    #uname{
+      color: white;
+    }
+  </style>
+  <nav class="navbar sticky-top navbar-dark  bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Lab 10 - Javascript</a>
+      <nav>
+        <div id="uimage" class="logged-in"></div>
+        <div id="uname" class="logged-in"></div>
+        </button>
+        <button type="button" id="btngoogle" class="btn btn-outline-light logged-out">
+          <i class="bi bi-emoji-wink-fill"></i> Login
+        </button>
+        <button type="button" id="btnLogout" class="btn btn-outline-light logged-in">
+          <i class="bi bi-emoji-frown-fill"></i> Login Out
+        </button>
+      </nav>
+    </div>
+  </nav>
+
+  <div class="container p-5 justify-content-center logged-in">
+    <div class="d-flex">
+      <div class="me-3">
+        <h1>My List</h1>
+      </div>
+      <button type="submit" class="btn btn-primary h-50" onclick="readList()">
+        <i class="bi bi-alexa"> update</i>
+      </button>
+    </div>
+
+    <div id="main-content">
+      <!-- <div class="form-check">
+        <input type="checkbox" class="form-check-input">
+        <label class="form-check-label">XXXXXX</label>
+        <button type="button" class="btn btn-outline-danger btn-delete" data-id="${id}">
+          <i class="bi bi-trash3"></i>
+        </button>
+      </div> -->
+    </div>
+  </div>
+  <hr>
+
+  <div class="container p-5 justify-content-center logged-in">
+      <h4>Add List</h4>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">
+        <i class="bi bi-rocket-takeoff-fill"></i>
+      </span>
+      <input id="toDoInput" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      <button type="button" class="btn btn-success" onclick="addList()">Submit</button>
+    </div>
+  </div>
+  
+  <script>
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAkvzj_2L88VIimGsEV22f0mHU6q_86JM8",
+      authDomain: "web-design-javascript-la-b2686.firebaseapp.com",
+      databaseURL: "https://web-design-javascript-la-b2686-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "web-design-javascript-la-b2686",
+      storageBucket: "web-design-javascript-la-b2686.appspot.com",
+      messagingSenderId: "674474825780",
+      appId: "1:674474825780:web:fcdd85cef3b37a0916d261",
+      measurementId: "G-6PB8PT6HEP"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  
+  <script src="insert_data.js"></script>
+  <script src="read_data.js"></script>
+  <script src="extra_auth.js"></script>
+</body>
+</html>
